@@ -1,0 +1,26 @@
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+export PATH=$JAVA_HOME/bin:$PATH
+idlj -fall Calculator.idl
+javac CalculatorApp/*.java
+javac *.java
+
+
+NEW TERMINAL : 
+
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+export PATH=$JAVA_HOME/bin:$PATH
+orbd -ORBInitialPort 1050
+
+
+NEW TERMINAL : 
+
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+export PATH=$JAVA_HOME/bin:$PATH
+java Server -ORBInitialHost localhost -ORBInitialPort 1050
+
+
+NEW TERMINAL : 
+
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+export PATH=$JAVA_HOME/bin:$PATH
+java Client -ORBInitialHost localhost -ORBInitialPort 1050
